@@ -38,3 +38,19 @@ def follow(token,userid):
     else:
     	print('Failed to follow user')
 ```
+- Create question
+```python
+def genRandom(leng):
+	char_set = string.ascii_uppercase + string.digits
+	return ''.join(random.sample(char_set*6, leng))
+
+def msoal(token):
+    cookies = {'datadome': genRandom(9) + '-2shclUzf_ZfansDAwMNmquiuxoksG_JgOSTM597sgnJJ.BntlJefemRKCogmA7i~' + genRandom(10) + '~bglWfaB8uYSsOBlEHHIJ1tLsXUsAsMssXc9QfBc03r'}
+    headers = {'Host': 'brainly.co.id','x-b-token-long': token,'accept': 'application/json','user-agent': 'Android-App 5.69.1','content-type': 'application/json; charset=UTF-8','content-length': '219'}
+    data = '{"attachments":[],"content":"MESSAGE","points":10,"subject_id":2}'
+    response = requests.post('https://brainly.co.id/api/28/api_tasks/add', headers=headers, cookies=cookies, data=data).text
+    if '"is_deleted":false' in response:
+    	print('[SOAL] Success Token: ' + token)
+    else:
+    	print('Failed')
+```
