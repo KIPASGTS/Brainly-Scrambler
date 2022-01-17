@@ -27,3 +27,14 @@ def acc_check(token):
     response = requests.get('https://brainly.co.id/api/28/api_users/me', headers=headers, cookies=cookies)
     print(response.text)
 ```
+- Follow User
+```python
+def follow(token,userid):
+    cookies = {'datadome': 'nvAnnuA9Ov9qRyjv-dg99xa_eW-O0lLjG59loLw.ZjbeZAoixKmSW9qDnZ-wIFOEYMw.9sr6S1FOLLRtA7g~SxpcbhveJ8A9DQRZVF2on4mPcHDrE1nazwTYWuQy8Hx',}
+    headers = {'Host': 'brainly.co.id','user-agent': 'Android-App 5.69.1','x-b-token-long': token,'accept': 'application/json'}
+    response = requests.put('https://brainly.co.id/api/28/api_users/follow/32605709', headers=headers, cookies=cookies).text
+    if '"success":true' in response:
+    	print('[BOT] success follow the user')
+    else:
+    	print('Failed to follow user')
+```
