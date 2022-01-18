@@ -13,7 +13,7 @@ os.environ['HTTPS_PROXY'] = os.environ['https_proxy'] = 'http://ip:port/'
 ```
 - Auto Answer latests Question
 ```python
-import requests, json, re, threading, random, string, time
+import requests, json, re, threading, random, string, time, os
 
 def genRandom(leng):
 	char_set = string.ascii_uppercase + string.digits
