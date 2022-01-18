@@ -15,10 +15,6 @@ os.environ['HTTPS_PROXY'] = os.environ['https_proxy'] = 'http://ip:port/'
 ```python
 import requests, json, re, threading, random, string, time
 
-
-def verifyCaptcha(urls):
-	data = requests.get(urls).text
-	print(data)
 def genRandom(leng):
 	char_set = string.ascii_uppercase + string.digits
 	return ''.join(random.sample(char_set*6, leng))
