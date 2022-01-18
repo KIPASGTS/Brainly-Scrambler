@@ -11,7 +11,7 @@ Note: Kamu harus bikin bot account dulu untuk mendapatkan token
 import os
 os.environ['HTTPS_PROXY'] = os.environ['https_proxy'] = 'http://ip:port/'
 ```
-- Auto Answer News Question
+- Auto Answer latests Question
 ```python
 import requests, json, re, threading, random, string, time
 
